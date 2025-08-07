@@ -1,6 +1,6 @@
 <?php
 // Connexion à la base de données
-// require 'database.php';
+ require 'database.php';
 
 // Traitement du formulaire
 $success = '';

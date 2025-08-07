@@ -44,6 +44,13 @@ require'database.php';
       max-width: 1200px;
       margin: auto;
       padding: 0 30px;
+      
+    }
+    .containers {
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 30px;
+      display: flex;
     }
 
     /* HEADER */
@@ -278,9 +285,10 @@ require'database.php';
       <div class="logo">OfficeFlow</div>
       <nav>
         <ul>
+          <li><a href="#features">accueil</a></li>
           <li><a href="#features">Fonctionnalités</a></li>
           <li><a href="#about">À propos</a></li>
-          <li><a href="login.php" class="btn">Connexion</a></li>
+          <li><a href="register.php" class="btn">Connexion</a></li>
         </ul>
       </nav>
     </div>
@@ -289,7 +297,7 @@ require'database.php';
   <!-- HERO -->
   <section class="hero">
     <div class="container">
-      <h1>Optimisez le secrétariat du centre de formation professionnelle la canadienne</h1>
+      <h1>Optimisez le secrétariat du centre de formation professionnel la canadienne</h1>
       <p>OfficeFlow simplifie la gestion des tâches, des utilisateurs et des documents pour les centres de formation.</p>
       <a href="login.php" class="glow-btn">Commencer maintenant</a>
     </div>
@@ -326,12 +334,13 @@ require'database.php';
 
   <!-- ABOUT -->
   <section id="about">
-    <div class="container">
+    <div class="containers">
       <div class="text">
         <h2>À propos d’OfficeFlow</h2>
         <p>OfficeFlow est une application pensée pour les centres de formation professionnelle, facilitant la gestion du secrétariat. Avec une interface intuitive et des fonctionnalités adaptées, OfficeFlow vous aide à gagner du temps et à améliorer la productivité de votre équipe.</p>
       </div>
-      <img src="https://images.unsplash.com/photo-1581091215367-cd244dc76ee2?auto=format&fit=crop&w=600&q=80" alt="Secrétariat moderne" />
+      <img src="image2.jpeg" alt="Secrétariat moderne" />
+     
     </div>
   </section>
 
@@ -343,6 +352,7 @@ require'database.php';
         <a href="#features">Fonctionnalités</a> |
         <a href="#about">À propos</a> |
         <a href="login.php">Connexion</a>
+        <a href="dashboard.php">admin</a>
       </p>
       <p>📧 Contact : <a href="mailto:contact@officeflow.com">contact@officeflow.com</a></p>
       <p>© 2025 OfficeFlow. Tous droits réservés.</p>

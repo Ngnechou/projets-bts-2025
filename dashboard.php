@@ -441,7 +441,7 @@
         </a>
       </li>
       <li>
-        <a href="#">
+        <a href="ajout.php">
           <i class='bx bxs-task'></i>
           <span class="text">Tâches</span>
         </a>

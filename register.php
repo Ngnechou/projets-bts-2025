@@ -10,16 +10,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nom = trim($_POST['nom']);
     $email = trim($_POST['email']);
     $mot_de_passe = $_POST['mot_de_passe'];
-    $role = $_POST['role'];
+   
 
-    if (!empty($nom) && !empty($email) && !empty($mot_de_passe) && !empty($role)) {
+    if (!empty($nom) && !empty($email) && !empty($mot_de_passe)) {
         // Hasher le mot de passe
         $mot_de_passe_hash = password_hash($mot_de_passe, PASSWORD_DEFAULT);
 
         try {
-            $stmt = $pdo->prepare("INSERT INTO utilisateurs (nom, email, mot_de_passe, role, date_creation) 
-                                   VALUES (?, ?, ?, ?, NOW())");
-            $stmt->execute([$nom, $email, $mot_de_passe_hash, $role]);
+            $stmt = $pdo->prepare("INSERT INTO utilisateurs (nom, email, mot_de_passe, date_creation) 
+                                   VALUES (?, ?, ?,  NOW())");
+            $stmt->execute([$nom, $email, $mot_de_passe_hash,]);
             $success = " ✔👨‍⚖️Utilisateur ajouté avec succès !";
         } catch (PDOException $e) {
             if ($e->getCode() == 23000) {
@@ -125,21 +125,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   <form method="POST" action="">
     <label for="nom">Nom</label>
-    <input type="text" name="nom" placeholder="entrez votre nom" id="nom" required>
+    <input type="text" name="nom" placeholder="entrez votre nom" id="nom" >
 
     <label for="email">Email</label>
-    <input type="email" name="email" placeholder="entrez votre email"  id="email" required>
+    <input type="email" name="email" placeholder="entrez votre email"  id="email" >
 
     <label for="mot_de_passe">Mot de passe</label>
-    <input type="password" name="mot_de_passe" placeholder="entrez votre mot de passe" id="mot_de_passe" required>
+    <input type="password" name="mot_de_passe" placeholder="entrez votre mot de passe" id="mot_de_passe" >
 
-    <label for="role">Rôle</label>
-    <select name="role" id="role" required>
-      <option value="">-- Sélectionner --</option>
-      <option value="admin">Admin</option>
-      <option value="assistant">Assistant</option>
-      <option value="utilisateur">Utilisateur</option>
-    </select>
+    
 
     <button type="submit" class="btn">Enregistrer</button>
   </form>
